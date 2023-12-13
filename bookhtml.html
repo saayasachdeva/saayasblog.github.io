@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Saaya's Blog!</title>
+            <link rel="icon" type="image/x-icon" href="bookfavicon2.jpeg">
+        </head>
+        <style>
+             h1 {
+                color: rgb(91, 10, 10);
+                text-align: center;
+                position: fixed;
+                top: 20px;
+                 }
+        .topnav {
+            background-color: rgb(244, 226, 176);
+            margin-bottom: 10px;
+            overflow: hidden;
+            position: fixed;
+            top: 80px;
+            }
+
+        .topnav a {
+            float: left;
+            color: #000000;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
+        }
+
+        .topnav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        .topnav a.active {
+            background-color: rgb(91, 10, 10);
+                color: white;
+            }
+
+        #search {
+            float: right;
+            margin-right: 16px;
+            margin-top: 12px;
+        }
+
+        .topnav input[type=text] {
+            float: right;
+            padding: 6px;
+            border: none;
+            margin-top: 8px;
+            margin-right: 10px;
+            font-size: 17px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            min-height: 100vh;
+            background-color: beige;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+        
+        .card {
+            position: relative;
+            width: 280px;
+            height: 400px;
+            background-color: aliceblue;
+            border-radius: 10px;
+            cursor: pointer;
+            box-shadow: 10px 0 20px rgba(0, 0, 0, 0.4);
+            transform: perspective(2000px) rotateZ(0);
+            transform-style: preserve-3d;
+            transition: all 1s ease;
+
+        }
+
+        .cover {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: blue;
+            border-radius: 10px;
+            transform-origin: left;
+            transform-style: preserve-3d;
+            transition: all 1s ease;
+        }
+
+        
+        
+        .card:hover .cover {
+            transform: rotateY(-135deg);
+        }
+
+        .content {
+            width: 100%;
+            height: 100%;
+            padding: 1rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-size: 12px;
+        }
+
+        .drac {
+            height: 400px;
+        }
+       
+        #h2book {
+            padding-bottom: 5px;
+        }
+
+        h3 {
+            padding-bottom: 5px;
+        }
+
+        h4 {
+            padding-bottom: 5px;
+        }
+
+        p {
+            padding-bottom: 3px;
+        }
+
+        #h2hover {
+            color: rgb(91, 10, 10);
+            padding-right: 20px;
+        
+        }
+
+    </style>
+<body>
+    <h1>Welcome to Saaya's Blog!</h1>
+    
+        <div class="topnav">
+            <a class="active" href="Project.html">Home</a>
+            <a href="bookreview.html">Book Reviews!</a>
+            <a href="moviereview.html">Movie Reviews!</a>
+            <button id="search">Search</button>
+            <input type="text" placeholder="Search">
+        </div>
+
+        <h2 id="h2hover">hover over the cover to see the first page!</h2> 
+    <div class="card">
+        <div class="cover">
+        <img class="drac" src="draculacover.jpg" alt="draculacover">
+        </div>
+        <div class="content">
+          <h2 id="h2book">Chapter 1</h2>
+          <h3>Jonathan Harker's Journal</h3>
+          <h4>(Kept in shorthand)</h4>
+          <p>3 May. Bistritz.—Left Munich at 8:35 P. M., on Ist May, arriving at Vienna early next morning; should have arrived at 6:46, but train was an hour late. Buda-Pesth seems a wonderful place, from the glimpse which I got of it from the train and the little I could walk through the streets. I feared to go very far from the station, as we had arrived late and would start as near the correct time as possible.</p>
+          <p>The impression I had was that we were leaving the West and entering the East; the most western of splendid bridges over the Danube, which is here of noble width and depth, took us among the traditions of Turkish rule.</p>
+          <p>We left in pretty good time, and came after nightfall to Klausenburgh. Here I stopped for the night at the Hotel Royale. I had for dinner, or rather supper, a chicken done up some way with red pepper, which was very good but thirsty. (Mem., get recipe for Mina.) I asked the waiter, and he said it was called "paprika hendl," and that, as it was a national dish, I should be able to get it anywhere along the Carpathians.</p>
+    </div>
+</div>
+
+
+</body>

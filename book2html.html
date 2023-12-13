@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Saaya's Blog!</title>
+            <link rel="icon" type="image/x-icon" href="bookfavicon2.jpeg">
+        </head>
+        <style>
+            h1 {
+                color: rgb(91, 10, 10);
+                text-align: center;
+                position: fixed;
+                top: 20px;
+                 }
+        .topnav {
+            background-color: rgb(244, 226, 176);
+            margin-bottom: 10px;
+            overflow: hidden;
+            position: fixed;
+            top: 80px;
+            }
+
+        .topnav a {
+            float: left;
+            color: #000000;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
+        }
+
+        .topnav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        .topnav a.active {
+            background-color: rgb(91, 10, 10);
+                color: white;
+            }
+
+        #search {
+            float: right;
+            margin-right: 16px;
+            margin-top: 12px;
+        }
+
+        .topnav input[type=text] {
+            float: right;
+            padding: 6px;
+            border: none;
+            margin-top: 8px;
+            margin-right: 10px;
+            font-size: 17px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            min-height: 100vh;
+            background-color: beige;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+        
+        .card {
+            position: relative;
+            width: 260px;
+            height: 400px;
+            background-color: aliceblue;
+            border-radius: 10px;
+            cursor: pointer;
+            box-shadow: 10px 0 20px rgba(0, 0, 0, 0.4);
+            transform: perspective(2000px) rotateZ(0);
+            transform-style: preserve-3d;
+            transition: all 1s ease;
+
+        }
+
+        .cover {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: blue;
+            border-radius: 10px;
+            transform-origin: left;
+            transform-style: preserve-3d;
+            transition: all 1s ease;
+        }
+
+        
+        
+        .card:hover .cover {
+            transform: rotateY(-135deg);
+        }
+
+        .content {
+            width: 100%;
+            height: 100%;
+            padding: 1rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-size: 12px;
+        }
+
+        .pride {
+            height: 400px;
+        }
+        #h2hover {
+            color: rgb(91, 10, 10);
+            padding-right: 20px;
+
+        }
+        
+       
+    </style>
+<body>
+    <h1>Welcome to Saaya's Blog!</h1>
+    
+        <div class="topnav">
+            <a class="active" href="Project.html">Home</a>
+            <a href="bookreview.html">Book Reviews!</a>
+            <a href="moviereview.html">Movie Reviews!</a>
+            <button id="search">Search</button>
+            <input type="text" placeholder="Search">
+        </div>
+        <h2 id="h2hover">hover over the cover to see the first page!</h2> 
+    <div class="card">
+        <div class="cover">
+        <img class="pride" src="prideandprejudice.jpg" alt="prideandprejudice">
+        </div>
+        <div class="content">
+          <h2 id="h2book">Chapter 1</h2>
+          <p>It is a truth universally acknowledged, that a single man in possession of a good fortune, must be in want of a wife.</p>
+          <p>However little known the feelings or views of such a man may be on his first entering a neighbourhood, this truth is so well fixed in the minds of the surrounding families, that he is considered the rightful property of some one or other of their daughters.</p>
+          <p>"My dear Mr. Bennet," said his lady to him one day, "have you heard that Netherfield Park is let at last?"</p>
+          <p>Mr. Bennet replied that he had not.</p>
+          <p>"But it is," returned she; "for Mrs. Long has just been here, and she told me all about it."</p>
+          <p>Mr. Bennet made no answer.</p>
+          <p>"Do you not want to know who has taken it?" cried his wife impatiently.</p>
+          <p>"You want to tell me, and I have no objection to hearing it."</p>
+          <p>This was invitation enough.</p>
+          <p>"Why, my dear, you must know, Mrs. Long says that Netherfield is taken by a young man of large fortune from the north of England;</p>
+        </div>
+
+</div>
+</body>

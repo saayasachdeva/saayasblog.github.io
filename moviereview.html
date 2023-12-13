@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Saaya's Blog!</title>
+        <link rel="icon" type="image/x-icon" href="bookfavicon2.jpeg">
+    </head>
+    <style>
+         .topnav {
+            background-color: rgb(244, 226, 176);
+            margin-bottom: 10px;
+            overflow: hidden;
+            }
+
+        .topnav a {
+            float: left;
+            color: #000000;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
+        }
+
+        .topnav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        .topnav a.active {
+            background-color: rgb(91, 10, 10);
+                color: white;
+            }
+
+        #search {
+            float: right;
+            margin-right: 16px;
+            margin-top: 12px;
+        }
+
+        .topnav input[type=text] {
+            float: right;
+            padding: 6px;
+            border: none;
+            margin-top: 8px;
+            margin-right: 10px;
+            font-size: 17px;
+        }
+        
+        body {
+            background-color: beige;
+        }
+        h1 {
+            color: rgb(91, 10, 10);
+            text-align: center;
+        }
+
+        #movie {
+            margin-top: 50px;
+        }
+        #bookcover {
+            float: right;
+            margin-right: 100px;
+            margin-left: 10px;
+            width: 140px;
+        }
+        #review {
+            margin-bottom: 110px;
+        }
+        #moviecover {
+            float: left;
+            margin-right: 50px;
+            margin-left: 10px;
+            width: 140px;
+        }
+        
+        table {
+            background-color: rgb(217, 202, 217);
+            margin-top: 20px;
+        }
+        
+        h2 {
+            color: rgb(91, 10, 10);
+        }
+        p {
+            color: rgb(32, 104, 8);
+        }
+        .button {
+            margin-left: 30px;
+            margin-top: 30px;
+        }
+
+        #comment-box {
+            border: line;
+            border-radius: 5px;
+            width: 200px;
+            height: 20px;
+        }
+        #post {
+            height: 20px;
+            width: 50px;
+        }
+        #post:hover{
+             background-color: deeppink;
+        }
+        .starrating {
+            float: left;
+            width: 500px;
+            padding: 30px 30px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 3px;
+            z-index: 1;
+        }
+        
+        .writereview {
+            width: 500px;
+            padding: 30px 30px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 3px;
+            z-index: 1;
+        }
+        .starrating .content {
+            line-height: 1.6;
+            color: #000000;
+        }
+
+        .writereview .reviewcontent {
+            padding-top: 5px;
+            line-height: 1.6;
+            color: #000000;
+        }
+
+        .rate-box {
+            display: flex;
+            flex-direction: row-reverse;
+            gap: 0.1rem;
+        }
+
+        .rate-box input {
+            display: none;
+        }
+        .rate-box input:hover ~ .star:before {
+            color: rgba(255, 204, 51, 0.5);
+        }
+
+        .rate-box input:active + .star:before {
+            transform: scale(0.9);
+        }
+
+        .rate-box input:checked ~ .star:before {
+            color: #ffcc33;
+            text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.3), -3px -3px 8px rgba(255, 255, 255, 0.8);
+        }
+
+        .rate-box .star:before {
+            content: "★";
+            display: inline-block;
+            font-family: "Potta One", cursive;
+            font-size: 20px;
+            cursor: pointer;
+            color: #0000;
+            text-shadow: 2px 2px 3px rgba(255, 255, 255, 0.5);
+            background-color: #aaa;
+            background-clip: text;
+            -webkit-background-clip: text;
+            transition: all 0.3s;
+        }
+
+        textarea {
+            border: none;
+            resize: none;
+            width: 100%;
+            padding: 0.2rem;
+            color: inherit;
+            font-family: inherit;
+            line-height: 1.5;
+            border-radius: 0.2rem;
+            box-shadow: inset 2px 2px 8px rgba(0, 0, 0, 0.3), inset -2px -2px 8px rgba(255, 255, 255, 0.8);
+            background-color: rgba(255, 255, 255, 0.3);
+        }
+
+        textarea::placeholder {
+            color: #aaa;
+        }
+
+        textarea:focus {
+            outline-color: #bc9624;
+        }
+
+        .submit-btn {
+            padding: 4px 10px;
+            box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.3), -3px -3px 8px rgba(255, 255, 255, 0.8);
+            border-radius: 1rem;
+            cursor: pointer;
+            background-color: rgba(211, 168, 38, 0.8);
+            transition: all 0.2s;
+        }
+
+        .submit-btn:active {
+            transform: translate(2px, 2px);
+        }
+        
+        .mySlides {
+            height: 400px;
+            float: middle;
+            
+        }
+        
+        .leftbutton {
+            float: middle;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .rightbutton {
+            float: middle;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+    </style>
+<body>
+    <h1>Welcome to Saaya's Blog!</h1>
+    
+        <div class="topnav">
+            <a class="active" href="Project.html">Home</a>
+            <a href="bookreview.html">Book Reviews!</a>
+            <a href="moviereview.html">Movie Reviews!</a>
+            <button id="search">Search</button>
+            <input type="text" placeholder="Search">
+        </div>
+    <h1 id="movie"> Movie Reviews!</h1>
+            <ol>
+                <img id="moviecover" src="https://agathachristie.imgix.net/image-store/Landing-Pages-2021/Email_AHauntedPoster.jpg" alt="A Haunting in Venice movie cover">
+                <li>A Haunting in Venice <br>
+                    release date: September 15, 2023 <br>
+                    review: 5/5 stars! <br>
+                <p id="review">Inspired by Agatha Christie's novel <em>Hallowe'en Party</em>, this book is about a solving a murder that happens during a seance. There are different suspects each with a different motive. There wasn't as much haunting as I would have hoped for, but overall I really enjoyed this movie. I would recommend if you like murder mysteries!</p>
+                </li>
+                <img id="moviecover" src="https://upload.wikimedia.org/wikipedia/en/b/bc/The_Nun_II_%282023%29.jpg" alt="The Nun II movie cover">
+                <li>The Nun II <br>
+                    release date: September 8, 2023<br>
+                    review: 5/5 stars! <br>
+                <p id="review">The Nun II is a horror film set in 1956. Sister Irene and Sister Debra travel to Tarascon, France, to go up against the nun spirit Valak. I loved this movie and I personally think it was better than the first one. I would say to watch the first Nun movie before watching Nun II. I definitely recommend to watch if you like horror movies!</p>
+                </li>
+                <img id="moviecover" src="https://img.cnmhstng.com/images/2023/A_Man_Called_Otto416.jpg" alt="A Man Called Otto movie cover">
+                <li>A Man Called Otto <br>
+                    release date: January 13, 2023<br>
+                    review: 5/5 stars! <br>
+                <p id="review">Based off the book <em>A Man Called Ove</em> by Fredrick Backman, this movie was about a grumpy old man called Otto who befriends the family that moves in next door. I recommend this movie if you're looking for something heartwarming.</p>
+                </li>
+                <img id="moviecover" src="https://upload.wikimedia.org/wikipedia/en/4/4f/Insidious_the_red_door.png" alt="Insidious: The Red Door movie cover">
+                <li>Insidious: The Red Door <br>
+                    release date: July 7, 2023<br>
+                    review: 3/5 stars! <br>
+                <p id="review">Insidious: The Red Door is the 5th of the Insidious movies. It's labeled as a horror film, but there wasn't much horror thoughout the film. It was mostly toward the end. You don't need to watch the previous Insidious movies to watch this one.</p>
+                </li>
+                </ol>
+            <div class="starrating"> 
+                <div class="content"> Were these reviews helpful? Let us know how we can improve!</div>
+                <div class="rate-box">
+                  <input type="radio" name="star" id="star0"/>
+                  <label class="star" for="star0"></label>
+                  <input type="radio" name="star" id="star1"/>
+                  <label class="star" for="star1"></label>
+                  <input type="radio" name="star" id="star2" checked="checked"/>
+                  <label class="star" for="star2"></label>
+                  <input type="radio" name="star" id="star3"/>
+                  <label class="star" for="star3"></label>
+                  <input type="radio" name="star" id="star4"/>
+                  <label class="star" for="star4"></label>
+                </div>
+                <textarea cols="30" rows="3" placeholder="Write comment here"></textarea>
+                <div class="submit-btn">Post</div>
+              </div>
+
+            <div class="writereview">
+                <div class="reviewcontent">Write your own review here!</div>
+                <textarea cols="30" rows="3" placeholder="Write review here"></textarea>
+                <div class="submit-btn">Post</div>
+            </div>
+</body>

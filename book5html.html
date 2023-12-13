@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Saaya's Blog!</title>
+            <link rel="icon" type="image/x-icon" href="bookfavicon2.jpeg">
+        </head>
+        <style>
+            h1 {
+                color: rgb(91, 10, 10);
+                text-align: center;
+                position: fixed;
+                top: 20px;
+                 }
+        .topnav {
+            background-color: rgb(244, 226, 176);
+            margin-bottom: 10px;
+            overflow: hidden;
+            position: fixed;
+            top: 80px;
+            }
+
+        .topnav a {
+            float: left;
+            color: #000000;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
+        }
+
+        .topnav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        .topnav a.active {
+            background-color: rgb(91, 10, 10);
+                color: white;
+            }
+
+        #search {
+            float: right;
+            margin-right: 16px;
+            margin-top: 12px;
+        }
+
+        .topnav input[type=text] {
+            float: right;
+            padding: 6px;
+            border: none;
+            margin-top: 8px;
+            margin-right: 10px;
+            font-size: 17px;
+        }
+
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            min-height: 100vh;
+            background-color: beige;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+        
+        .card {
+            position: relative;
+            width: 257px;
+            height: 400px;
+            background-color: aliceblue;
+            border-radius: 10px;
+            cursor: pointer;
+            box-shadow: 10px 0 20px rgba(0, 0, 0, 0.4);
+            transform: perspective(2000px) rotateZ(0);
+            transform-style: preserve-3d;
+            transition: all 1s ease;
+
+        }
+
+        .cover {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: blue;
+            border-radius: 10px;
+            transform-origin: left;
+            transform-style: preserve-3d;
+            transition: all 1s ease;
+        }
+
+        
+        
+        .card:hover .cover {
+            transform: rotateY(-135deg);
+        }
+
+        .content {
+            width: 100%;
+            height: 100%;
+            padding: 1rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-size: 12px;
+        }
+
+        .lostworldcover {
+            height: 400px;
+        }
+       
+        #h2book {
+            padding-bottom: 5px;
+        }
+
+        p {
+            padding-bottom: 3px;
+        }
+        #h2hover {
+            color: rgb(91, 10, 10);
+            padding-right: 20px;
+
+        }
+        h3 {
+            padding-bottom: 5px;
+        }
+    </style>
+<body>
+    <h1>Welcome to Saaya's Blog!</h1>
+    
+        <div class="topnav">
+            <a class="active" href="Project.html">Home</a>
+            <a href="bookreview.html">Book Reviews!</a>
+            <a href="moviereview.html">Movie Reviews!</a>
+            <button id="search">Search</button>
+            <input type="text" placeholder="Search">
+        </div>
+        <h2 id="h2hover">hover over the cover to see the first page!</h2> 
+    <div class="card">
+        <div class="cover">
+        <img class="lostworldcover" src="thelostworldbookcover.jpeg" alt="lostworldcover">
+        </div>
+        <div class="content">
+          <h2 id="h2book">Chapter One</h2>
+          <h3>"There Are Heroisms All Round Us"</h3>
+          <p>Mr. Hungerton, her father, really was the most tactless person upon earth-a fluffy, feathery, untidy cockatoo of a man, perfectly good-natured, but absolutely centred upon his own silly self. If anything could have driven me from Gladys, it would have been the thought of such a father-in-law. I am convinced that he really believed in his heart that I came round to the Chestnuts three days a week for the pleasure of his company, and very especially to hear his views upon bimetallism-a subject upon which he was by way of being an authority.</p>
+          <p>For an hour or more that evening I listened to his monotonous chirrup about bad money driving out good, the token value of silver, the depreciation of the rupee, and the true standards of exchange.</p>
+          <p>"Suppose," he cried, with feeble violence, "that all the debts in the world were called up simultaneously and immediate payment insisted upon. What, under our present conditions, would happen then?"</p>
+        </div>
+</div>
+</body>

@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Saaya's Blog!</title>
+        <link rel="icon" type="image/x-icon" href="bookfavicon2.jpeg">
+    </head>
+    <style>
+        .topnav {
+            background-color: rgb(244, 226, 176);
+            margin-bottom: 10px;
+            overflow: hidden;
+            }
+
+        .topnav a {
+            float: left;
+            color: #000000;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
+        }
+
+        .topnav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        .topnav a.active {
+            background-color: rgb(91, 10, 10);
+                color: white;
+            }
+
+        #search {
+            float: right;
+            margin-right: 16px;
+            margin-top: 12px;
+        }
+
+        .topnav input[type=text] {
+            float: right;
+            padding: 6px;
+            border: none;
+            margin-top: 8px;
+            margin-right: 10px;
+            font-size: 17px;
+        }
+        body {
+            background-color: beige;
+        }
+        h1 {
+            color: rgb(91, 10, 10);
+            text-align: center;
+        }
+        #bookcover {
+            float: right;
+            margin-right: 100px;
+            margin-left: 10px;
+            width: 140px;
+        }
+        #review {
+            margin-bottom: 110px;
+        }
+        h2 {
+            color: rgb(91, 10, 10);
+        }
+        p {
+            color: rgb(91, 10, 10);
+        }
+        .button {
+            margin-left: 30px;
+            margin-top: 30px;
+        }
+
+        #comment-box {
+            border: line;
+            border-radius: 5px;
+            width: 200px;
+            height: 20px;
+        }
+        #post {
+            height: 20px;
+            width: 50px;
+        }
+        #post:hover{
+             background-color: deeppink;
+        }
+        .starrating {
+            float: left;
+            width: 500px;
+            padding: 30px 30px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 3px;
+            z-index: 1;
+        }
+        
+        .writereview {
+            width: 500px;
+            padding: 30px 30px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 3px;
+            z-index: 1;
+        }
+
+        .starrating .content {
+            line-height: 1.6;
+            color: #000000;
+        }
+
+        .writereview .reviewcontent {
+            padding-top: 5px;
+            line-height: 1.6;
+            color: #000000;
+        }
+
+        .rate-box {
+            display: flex;
+            flex-direction: row-reverse;
+            gap: 0.1rem;
+        }
+
+        .rate-box input {
+            display: none;
+        }
+        .rate-box input:hover ~ .star:before {
+            color: rgba(255, 204, 51, 0.5);
+        }
+
+        .rate-box input:active + .star:before {
+            transform: scale(0.9);
+        }
+
+        .rate-box input:checked ~ .star:before {
+            color: #ffcc33;
+            text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.3), -3px -3px 8px rgba(255, 255, 255, 0.8);
+        }
+
+        .rate-box .star:before {
+            content: "★";
+            display: inline-block;
+            font-family: "Potta One", cursive;
+            font-size: 20px;
+            cursor: pointer;
+            color: #0000;
+            text-shadow: 2px 2px 3px rgba(255, 255, 255, 0.5);
+            background-color: #aaa;
+            background-clip: text;
+            -webkit-background-clip: text;
+            transition: all 0.3s;
+        }
+
+        textarea {
+            border: none;
+            resize: none;
+            width: 100%;
+            padding: 0.2rem;
+            color: inherit;
+            font-family: inherit;
+            line-height: 1.5;
+            border-radius: 0.2rem;
+            box-shadow: inset 2px 2px 8px rgba(0, 0, 0, 0.3), inset -2px -2px 8px rgba(255, 255, 255, 0.8);
+            background-color: rgba(255, 255, 255, 0.3);
+        }
+
+        textarea::placeholder {
+            color: #aaa;
+        }
+
+        textarea:focus {
+            outline-color: #bc9624;
+        }
+
+        .submit-btn {
+            padding: 4px 10px;
+            box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.3), -3px -3px 8px rgba(255, 255, 255, 0.8);
+            border-radius: 1rem;
+            cursor: pointer;
+            background-color: rgba(211, 168, 38, 0.8);
+            transition: all 0.2s;
+        }
+
+        .submit-btn:active {
+            transform: translate(2px, 2px);
+        }
+
+
+    </style>
+<body>
+    <h1>Welcome to Saaya's Blog!</h1>
+    
+        <div class="topnav">
+            <a class="active" href="Project.html">Home</a>
+            <a href="bookreview.html">Book Reviews!</a>
+            <a href="moviereview.html">Movie Reviews!</a>
+            <button id="search">Search</button>
+            <input type="text" placeholder="Search">
+        </div>
+      
+<h1 id="book"> Book Reviews!</h1>
+            <ol>
+                 <img id="bookcover" src="draculacover.jpg" alt="Dracula book cover">
+                <li>Dracula <br>
+                    author: Bram Stoker <br>
+                    review: 5/5 stars! <br>
+                    <a href="bookhtml.html">click here for a preview of the book!</a>
+                    <p id="review">The book starts off with Jonathan Harker, a lawyer who is helping Count Dracula purchase a home in London. He soon finds himself learning mysterious things about Count Dracula. Other mysterious things happen in this book, such as a woman finding puncture marks on her neck and a ship with no passengers docking at a coast. I thought this book was very entertaining. The different parts of the story ended up connecting well with each other, with the main characters coming together in the end to save themselves from Dracula. I really enjoyed reading Bram Stoker's "Dracula!" and I highly recommend this horror novel!</p>
+                    
+                </li>
+                <img id="bookcover" src="prideandprejudice.jpg" alt="Pride and Prejudice book cover">
+                <li>Pride and Prejudice <br>
+                    author: Jane Austen <br>
+                    review: 4/5 stars! <br>
+                    <a href="book2html.html">click here for a preview of the book!</a>
+                    <p id="review">Pride and Prejudice is a classic novel. This is the story of when Elizabeth Bennet meets Mr. Darcy, and the love story that takes place between them. It shows challenges they face and the pressures of their families to get married. All the characters were written very well. This book is a little slow to get into, but once it picks up pace, it is a great example of classical literature. I would recommend this book!</p>
+                </li>
+                <img id="bookcover" src="emmacover.jpg" alt="Emma book cover">
+                <li>Emma <br>
+                    author: Jane Austen <br>
+                    review: 4/5 stars! <br>
+                    <a href="book3html.html">click here for a preview of the book!</a>
+                    <p id="review">Going into this book, I didn't know what to expect. It's labelled a classic romance book, which I think is true. The main character, Emma, plays matchmakers and spends the whole book trying to get people together so they could get married. She also tries to find someone for herself to marry. It took me a while to finish this book, but I liked this book more than I thought I would. I would recommend this book if you're looking for a classic romance.</p>
+                </li>
+                <img id="bookcover" src="littlewomencover.jpg" alt="Little Women book cover">
+                <li>Little Women <br>
+                    author: Louisa May Alcott <br>
+                    review: 5/5 stars! <br>
+                    <a href="book4html.html">click here for a preview of the book!</a>
+                    <p id="review">Little Women is the story of the March sisters, Meg, Jo, Beth, and Amy, and their lives from childhood to when they become women. These sisters refer to themselves as "little women." This book shows the bond of a family, especially the bond of a mother and her daughters. This book taught a lot of life lessons, such as how money cannot buy happiness. I would highly recommend this book if you're looking for a classic!</p>
+                </li>
+                <img id="bookcover" src="thelostworldbookcover.jpeg" alt="The Lost World book cover">
+                <li>The Lost World <br>
+                    author: Arthur Conan Doyle <br>
+                    review: 4/5 stars! <br>
+                    <a href="book5html.html">click here for a preview of the book!</a>
+                    <p id="review">This book starts off with Edward Malone, a journalist who after being rejected by a woman, decides to find fame and adventure to make himself worthy of her. After meeting Professor George Challenger, he joins him on a trip to discover a "lost world." This book was very entertaining. I definitely enjoyed it. I would highly recommend this book if you're looking for a classic that has dinosaurs!</p>
+                </li>
+                <img id="bookcover" src="journeytothecenteroftheearthcover.jpeg" alt="Journey to the Center of the Earth book cover">
+                <li>Journey to the Center of the Earth <br>
+                    author: Jules Verne <br>
+                    review: 4/5 stars! <br>
+                    <a href="book6html.html">click here for a preview of the book!</a>
+                    <p id="review">A geology professor, Professor Lidenbrock, finds a manuscript from the 16th century written by an explorer who believes to have found a way to the center of the earth. He takes his nephew Axel with him to investigate, passing through volcanoes and seas on their voyage. This book was a little difficult to get into in the beginning, and it was slow in some parts of the book. However, the adventure was definitely one worth reading. I recommend!</p>
+                </li>
+                <img id="bookcover" src="thesecretgardenbookcover.jpeg" alt="The Secret Garden book cover">
+                <li>The Secret Garden <br>
+                    author: Frances Hodgson Burnett <br>
+                    review: 4/5 stars! <br>
+                    <a href="book7html.html">click here for a preview of the book!</a>
+                    <p id="review">This story is about Mary Lennox, a spoiled and ill child, who lives with her uncle in Misselthwaite Manor. While there, she meets housekeepers, gardeners, and her cousin Colin. She finds a door to a secret garden, where she decides to fix up the garden and make it become alive. This book was very sweet and simple. The character development was excellent, and they were written well. Although this is considered a children's classic, I would recommend for anyone to read! It is also a quick read.</p>
+                </li>
+            </ol>
+            <div class="starrating"> 
+                <div class="content"> Were these reviews helpful? Let us know how we can improve!</div>
+                <div class="rate-box">
+                  <input type="radio" name="star" id="star0"/>
+                  <label class="star" for="star0"></label>
+                  <input type="radio" name="star" id="star1"/>
+                  <label class="star" for="star1"></label>
+                  <input type="radio" name="star" id="star2" checked="checked"/>
+                  <label class="star" for="star2"></label>
+                  <input type="radio" name="star" id="star3"/>
+                  <label class="star" for="star3"></label>
+                  <input type="radio" name="star" id="star4"/>
+                  <label class="star" for="star4"></label>
+                </div>
+                <textarea cols="30" rows="3" placeholder="Write comment here"></textarea>
+                <div class="submit-btn">Post</div>
+              </div>
+
+            <div class="writereview">
+                <div class="reviewcontent">Write your own review here!</div>
+                <textarea cols="30" rows="3" placeholder="Write review here"></textarea>
+                <div class="submit-btn">Post</div>
+            </div>
+</body>
+</html>

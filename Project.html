@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Saaya's Blog!</title>
+        <link rel="icon" type="image/x-icon" href="bookfavicon2.jpeg">
+    </head>
+    <style>
+        .topnav {
+            background-color: rgb(244, 226, 176);
+            margin-bottom: 10px;
+            overflow: hidden;
+            }
+
+        .topnav a {
+            float: left;
+            color: #000000;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
+        }
+
+        .topnav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        .topnav a.active {
+            background-color: rgb(91, 10, 10);
+                color: white;
+            }
+
+        #search {
+            float: right;
+            margin-right: 16px;
+            margin-top: 12px;
+        }
+
+        .topnav input[type=text] {
+            float: right;
+            padding: 6px;
+            border: none;
+            margin-top: 8px;
+            margin-right: 10px;
+            font-size: 17px;
+        }
+        
+        body {
+            background-color: beige;
+        }
+        h1 {
+            color: rgb(91, 10, 10);
+            text-align: center;
+        }
+
+        #movie {
+            margin-top: 50px;
+        }
+        
+        #bookcover {
+            float: right;
+            margin-right: 100px;
+            margin-left: 10px;
+            width: 140px;
+        }
+        #review {
+            margin-bottom: 110px;
+        }
+        #moviecover {
+            float: left;
+            margin-right: 50px;
+            margin-left: 10px;
+            width: 140px;
+        }
+        
+        h2 {
+            color: rgb(91, 10, 10);
+        }
+        p {
+            color: rgb(32, 104, 8);
+        }
+        .button {
+            margin-left: 30px;
+            margin-top: 30px;
+        }
+
+        #comment-box {
+            border: line;
+            border-radius: 5px;
+            width: 200px;
+            height: 20px;
+        }
+        #post {
+            height: 20px;
+            width: 50px;
+        }
+        #post:hover{
+             background-color: darkred;
+        }
+        .starrating {
+            float: left;
+            width: 500px;
+            padding: 30px 30px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 3px;
+            z-index: 1;
+        }
+        
+        .writereview {
+            width: 500px;
+            padding: 30px 30px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 3px;
+            z-index: 1;
+        }
+
+
+        .starrating .content {
+            line-height: 1.6;
+            color: #000000;
+        }
+
+        .writereview .reviewcontent {
+            padding-top: 5px;
+            line-height: 1.6;
+            color: #000000;
+        }
+
+        .rate-box {
+            display: flex;
+            flex-direction: row-reverse;
+            gap: 0.1rem;
+        }
+
+        .rate-box input {
+            display: none;
+        }
+        .rate-box input:hover ~ .star:before {
+            color: rgba(255, 204, 51, 0.5);
+        }
+
+        .rate-box input:active + .star:before {
+            transform: scale(0.9);
+        }
+
+        .rate-box input:checked ~ .star:before {
+            color: #ffcc33;
+            text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.3), -3px -3px 8px rgba(255, 255, 255, 0.8);
+        }
+
+        .rate-box .star:before {
+            content: "★";
+            display: inline-block;
+            font-family: "Potta One", cursive;
+            font-size: 20px;
+            cursor: pointer;
+            color: #0000;
+            text-shadow: 2px 2px 3px rgba(255, 255, 255, 0.5);
+            background-color: #aaa;
+            background-clip: text;
+            -webkit-background-clip: text;
+            transition: all 0.3s;
+        }
+
+        textarea {
+            border: none;
+            resize: none;
+            width: 100%;
+            padding: 0.2rem;
+            color: inherit;
+            font-family: inherit;
+            line-height: 1.5;
+            border-radius: 0.2rem;
+            box-shadow: inset 2px 2px 8px rgba(0, 0, 0, 0.3), inset -2px -2px 8px rgba(255, 255, 255, 0.8);
+            background-color: rgba(255, 255, 255, 0.3);
+        }
+
+        textarea::placeholder {
+            color: #aaa;
+        }
+
+        textarea:focus {
+            outline-color: #bc9624;
+        }
+
+        .submit-btn {
+            padding: 4px 10px;
+            box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.3), -3px -3px 8px rgba(255, 255, 255, 0.8);
+            border-radius: 1rem;
+            cursor: pointer;
+            background-color: rgba(211, 168, 38, 0.8);
+            transition: all 0.2s;
+        }
+
+        .submit-btn:active {
+            transform: translate(2px, 2px);
+        }
+        
+        
+        .mySlides {
+            height: 400px;
+            float: middle;
+        }
+        
+        .leftbutton {
+            float: middle;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .rightbutton {
+            float: middle;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        * {box-sizing:border-box}
+
+        .slideshow-container {
+            max-width: 375px;
+            position: relative;
+            margin: auto;
+        }
+
+        .mySlides {
+            display: flex;
+            margin: auto;
+            text-align: center;
+        }
+
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            margin-top: -22px;
+            padding: 16px;
+            color: black;
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.6s ease;
+            border-radius: 0 3px 3px 0;
+            user-select: none;
+        }
+
+        .next {
+            border-radius: 3px 0 0 3px;
+            left: 89%;
+            }
+
+        .prev:hover, .next:hover {
+            background-color: rgba(0,0,0,0.8);
+        }
+
+        .text {
+            color: #f2f2f2;
+            font-size: 15px;
+            padding: 8px 12px;
+            position: absolute;
+            bottom: 8px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .numbertext {
+            color: #f2f2f2;
+            color: rgb(0,0,0);
+            font-size: 13px;
+            padding: 8px 12px;
+            padding-left: 10px;
+            position: absolute;
+            top: 40;
+        }
+
+        .dot {
+            cursor: pointer;
+            height: 13px;
+            width: 13px;
+            margin: 0 2px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.6s ease;
+        }
+
+        .active, .dot:hover {
+            background-color: #717171;
+        }
+
+        .fade {
+            animation-name: fade;
+            animation-duration: 1.5s;
+        }
+
+        @keyframes fade {
+            from {opacity: .4}
+            to {opacity: 1}
+        }
+
+        h4 {
+            text-align: center;
+            padding-top: 10px;
+            color: rgb(91, 10, 10);
+        }
+    </style>
+
+   <body>
+    
+        <h1>Welcome to Saaya's Blog!</h1>
+    
+        <div class="topnav">
+            <a class="active" href="Project.html">Home</a>
+            <a href="bookreview.html">Book Reviews!</a>
+            <a href="moviereview.html">Movie Reviews!</a>
+            <button id="search">Search</button>
+            <input type="text" placeholder="Search">
+        </div>
+        <h4>swipe through to see some of my highest rated books!</h4>
+
+        <div class="slideshow-container">
+            <div class="mySlides fade">
+              <div class="numbertext">1 / 3</div>
+              <img src="draculacover.jpg" style="width:75%">
+            </div>
+            <div class="mySlides fade">
+              <div class="numbertext">2 / 3</div>
+              <img src="littlewomencover.jpg" style="width:72%">
+            </div>
+            <div class="mySlides fade">
+              <div class="numbertext">3 / 3</div>
+              <img src="prideandprejudice.jpg" style="width:70%">
+            </div>
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+          </div>
+          <br>
+          <div style="text-align:center">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+          </div>
+
+          <script>
+            let slideIndex = 1;
+                showSlides(slideIndex);
+
+            function plusSlides(n) {
+                showSlides(slideIndex += n);
+            }
+
+            function currentSlide(n) {
+                showSlides(slideIndex = n);
+                }
+
+            function showSlides(n) {
+                let i;
+                let slides = document.getElementsByClassName("mySlides");
+                let dots = document.getElementsByClassName("dot");
+                if (n > slides.length) {slideIndex = 1}
+                if (n < 1) {slideIndex = slides.length}
+                for (i = 0; i < slides.length; i++) {
+                    slides[i].style.display = "none";
+                }
+                for (i = 0; i < dots.length; i++) {
+                    dots[i].className = dots[i].className.replace(" active", "");
+                }
+                slides[slideIndex-1].style.display = "block";
+                dots[slideIndex-1].className += " active";
+            }
+     </script>
+
+            
+        </body>
+</html>

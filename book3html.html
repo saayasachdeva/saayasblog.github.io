@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Saaya's Blog!</title>
+            <link rel="icon" type="image/x-icon" href="bookfavicon2.jpeg">
+        </head>
+        <style>
+            h1 {
+                color: rgb(91, 10, 10);
+                text-align: center;
+                position: fixed;
+                top: 20px;
+                 }
+        .topnav {
+            background-color: rgb(244, 226, 176);
+            margin-bottom: 10px;
+            overflow: hidden;
+            position: fixed;
+            top: 80px;
+            }
+
+        .topnav a {
+            float: left;
+            color: #000000;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
+        }
+
+        .topnav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        .topnav a.active {
+            background-color: rgb(91, 10, 10);
+                color: white;
+            }
+
+        #search {
+            float: right;
+            margin-right: 16px;
+            margin-top: 12px;
+        }
+
+        .topnav input[type=text] {
+            float: right;
+            padding: 6px;
+            border: none;
+            margin-top: 8px;
+            margin-right: 10px;
+            font-size: 17px;
+        }
+
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            min-height: 100vh;
+            background-color: beige;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+        
+        .card {
+            position: relative;
+            width: 260px;
+            height: 400px;
+            background-color: aliceblue;
+            border-radius: 10px;
+            cursor: pointer;
+            box-shadow: 10px 0 20px rgba(0, 0, 0, 0.4);
+            transform: perspective(2000px) rotateZ(0);
+            transform-style: preserve-3d;
+            transition: all 1s ease;
+
+        }
+
+        .cover {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: blue;
+            border-radius: 10px;
+            transform-origin: left;
+            transform-style: preserve-3d;
+            transition: all 1s ease;
+        }
+
+        
+        
+        .card:hover .cover {
+            transform: rotateY(-135deg);
+        }
+
+        .content {
+            width: 100%;
+            height: 100%;
+            padding: 1rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-size: 12px;
+        }
+
+        .emmacover {
+            height: 400px;
+        }
+       
+        #h2book {
+            padding-bottom: 5px;
+        }
+
+        p {
+            padding-bottom: 3px;
+        }
+        #h2hover {
+            color: rgb(91, 10, 10);
+            padding-right: 20px;
+
+        }
+    </style>
+<body>
+    <h1>Welcome to Saaya's Blog!</h1>
+    
+        <div class="topnav">
+            <a class="active" href="Project.html">Home</a>
+            <a href="bookreview.html">Book Reviews!</a>
+            <a href="moviereview.html">Movie Reviews!</a>
+            <button id="search">Search</button>
+            <input type="text" placeholder="Search">
+        </div>
+        <h2 id="h2hover">hover over the cover to see the first page!</h2> 
+    <div class="card">
+        <div class="cover">
+        <img class="emmacover" src="emmacover.jpg" alt="emmacover">
+        </div>
+        <div class="content">
+          <h2 id="h2book">Chapter 1</h2>
+          <p>Emma Woodhouse, handsome, clever, and rich, with a comfortable home and happy disposition, seemed to unite some of the best blessings of existence; and had lived nearly twenty-one years in the world with very little to distress or vex her.</p>
+          <p>She was the youngest of the two daughters of a most affectionate, indulgent father; and had, in consequence of her sister's marriage, been mistress of his house from a very early period. Her mother had died too long ago for her to have more than an indistinct remembrance of her caresses; and her place had been supplied by an excellent woman as governess, who had fallen little short of a mother in affection.</p>
+          <p>Sixteen years had Miss Taylor been in Mr. Woodhouse's family, less as a governess than a friend, very fond of both daughters, but particularly of Emma. Between them it was more the intimacy of sisters. Even before Miss Taylor had ceased to hold the nominal office of governess, the mildness of her temper had hardly allowed her to impose any restraint;</p>
+    </div>
+</div>
+</body>

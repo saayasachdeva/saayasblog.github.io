@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Saaya's Blog!</title>
+            <link rel="icon" type="image/x-icon" href="bookfavicon2.jpeg">
+        </head>
+        <style>
+            h1 {
+                color: rgb(91, 10, 10);
+                text-align: center;
+                position: fixed;
+                top: 20px;
+                 }
+        .topnav {
+            background-color: rgb(244, 226, 176);
+            margin-bottom: 10px;
+            overflow: hidden;
+            position: fixed;
+            top: 80px;
+            }
+
+        .topnav a {
+            float: left;
+            color: #000000;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
+        }
+
+        .topnav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        .topnav a.active {
+            background-color: rgb(91, 10, 10);
+                color: white;
+            }
+
+        #search {
+            float: right;
+            margin-right: 16px;
+            margin-top: 12px;
+        }
+
+        .topnav input[type=text] {
+            float: right;
+            padding: 6px;
+            border: none;
+            margin-top: 8px;
+            margin-right: 10px;
+            font-size: 17px;
+        }
+
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            min-height: 100vh;
+            background-color: beige;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+        
+        .card {
+            position: relative;
+            width: 260px;
+            height: 400px;
+            background-color: aliceblue;
+            border-radius: 10px;
+            cursor: pointer;
+            box-shadow: 10px 0 20px rgba(0, 0, 0, 0.4);
+            transform: perspective(2000px) rotateZ(0);
+            transform-style: preserve-3d;
+            transition: all 1s ease;
+
+        }
+
+        .cover {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: blue;
+            border-radius: 10px;
+            transform-origin: left;
+            transform-style: preserve-3d;
+            transition: all 1s ease;
+        }
+
+        
+        
+        .card:hover .cover {
+            transform: rotateY(-135deg);
+        }
+
+        .content {
+            width: 100%;
+            height: 100%;
+            padding: 1rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-size: 12px;
+        }
+
+        .littlewomencover {
+            height: 400px;
+        }
+       
+        #h2book {
+            padding-bottom: 5px;
+        }
+
+        p {
+            padding-bottom: 3px;
+        }
+        #h2hover {
+            color: rgb(91, 10, 10);
+            padding-right: 20px;
+        }
+        h3 {
+            padding-bottom: 5px;
+        }
+    </style>
+<body>
+    <h1>Welcome to Saaya's Blog!</h1>
+    
+        <div class="topnav">
+            <a class="active" href="Project.html">Home</a>
+            <a href="bookreview.html">Book Reviews!</a>
+            <a href="moviereview.html">Movie Reviews!</a>
+            <button id="search">Search</button>
+            <input type="text" placeholder="Search">
+        </div>
+        <h2 id="h2hover">hover over the cover to see the first page!</h2> 
+    <div class="card">
+        <div class="cover">
+        <img class="littlewomencover" src="littlewomencover.jpg" alt="littlewomencover">
+        </div>
+        <div class="content">
+          <h2 id="h2book">Chapter 1</h2>
+          <h3>Playing Pilgrims</h3>
+          <p>“Christmas won't be Christmas without any presents," grumbled Jo, lying on the rug.</p>
+          <p>“It's so dreadful to be poor!" sighed Meg, looking down at her old dress.</p>
+          <p>“I don't think it's fair for some girls to have plenty of pretty things, and other girls nothing at all," added little Amy, with an injured sniff.</p>
+          <p>“We've got father and Mother, and each other," said Beth contentedly from her corner.</p>
+          <p>The four young faces on which the firelight shone brightened at the cheerful words, but darkened again as Jo said sadly, "We haven't got father, and shall not have him for a long time." She didn't say "perhaps never," but each silently added it, thinking of father far away, where the fighting was.</p>
+          <p>Nobody spoke for a minute; then Meg said in an altered tone, "You know the reason mother proposed not having any presents this Christmas was because it is going to be a hard winter for everyone;</p>
+        </div>
+</div>
+</body>
